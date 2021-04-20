@@ -1,93 +1,92 @@
+var lowerCaseCharactersArray = [
+  'a',
+  'b',
+  'c',
+  'd',
+  'e',
+  'f',
+  'g',
+  'h',
+  'i',
+  'j',
+  'k',
+  'l',
+  'm',
+  'n',
+  'o',
+  'p',
+  'q',
+  'r',
+  's',
+  't',
+  'u',
+  'v',
+  'w',
+  'x',
+  'y',
+  'z'
+];
+var upperCaseCharactersArray = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'J',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z'
+];
+var numericCharactersArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+var specialCharactersArray = [
+  '@',
+  '%',
+  '+',
+  '\\',
+  '/',
+  "'",
+  '!',
+  '#',
+  '$',
+  '^',
+  '?',
+  ':',
+  ',',
+  ')',
+  '(',
+  '}',
+  '{',
+  ']',
+  '[',
+  '~',
+  '-',
+  '_',
+  '.'
+];
 var generateBtn = document.querySelector("#generate");
+
 function getUserOptions() {
 
-  var lowerCaseCharactersArray = [
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-    'f',
-    'g',
-    'h',
-    'i',
-    'j',
-    'k',
-    'l',
-    'm',
-    'n',
-    'o',
-    'p',
-    'q',
-    'r',
-    's',
-    't',
-    'u',
-    'v',
-    'w',
-    'x',
-    'y',
-    'z'
-  ];
-  var upperCaseCharactersArray = [
-    'A',
-    'B',
-    'C',
-    'D',
-    'E',
-    'F',
-    'G',
-    'H',
-    'I',
-    'J',
-    'K',
-    'L',
-    'M',
-    'N',
-    'O',
-    'P',
-    'Q',
-    'R',
-    'S',
-    'T',
-    'U',
-    'V',
-    'W',
-    'X',
-    'Y',
-    'Z'
-  ];
-  var numericCharactersArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
-  var specialCharactersArray = [
-    '@',
-    '%',
-    '+',
-    '\\',
-    '/',
-    "'",
-    '!',
-    '#',
-    '$',
-    '^',
-    '?',
-    ':',
-    ',',
-    ')',
-    '(',
-    '}',
-    '{',
-    ']',
-    '[',
-    '~',
-    '-',
-    '_',
-    '.'
-  ];
-
-  var lengthRanges = [];
-  
-  lengthRanges = prompt("How long would you like your password to be")
+  var lengthRanges = prompt("How long would you like your password to be");
   lengthRanges = parseInt(lengthRanges);
   // ask for lowercase
   var lowerCaseUserChoice = confirm("would you like to use lower case letters in your password?");
@@ -138,7 +137,7 @@ function generatePassword() {
   var mustHaveCharacters = [];
   var canHaveCharacters = []
   var userOptions = getUserOptions();
-console.log
+console.log("userOptions",userOptions)
 
   if (userOptions.upperCaseCharactersArray) {
     canHaveCharacters.concat(upperCaseCharactersArray)
