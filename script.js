@@ -1,4 +1,3 @@
-
  var lowerCaseCharactersArray = [
   'a',
   'b',
@@ -55,7 +54,7 @@ var upperCaseCharactersArray = [
   'Y',
   'Z'
 ];
-var numericCharactersArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+var numericCharactersArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 var specialCharactersArray = [
   '@',
@@ -87,12 +86,14 @@ var specialCharactersArray = [
 var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", generatePassword);
 
-function generatePassword() { 
-  var passwordArray = [];
-  var mustHaveCharacters = [];
-  var canHaveCharacters = []
-  var userOptions = getUserOptions();
+function generatePassword() {
+ var userOptions = getUserOptions(); 
 
+ var passwordArray = [];
+
+ var mustHaveCharacters = [];
+
+ var canHaveCharacters = [];
 
 function getUserOptions() {
   var length = Number(prompt("How many characters would you like your password to be?"));
@@ -114,49 +115,61 @@ function getUserOptions() {
     length: length
   }
 
-return userOptions
+return userOptions;
 }
 
 function getRandomFromLength(arr) {
-  Math.floor(Math.random() * arr.length)
-}
+  return Math.floor(Math.random() *arr.length)
+  }
 
-  if (userOptions.upperCaseCharactersArray) {
+  if (userOptions.upperCaseUserChoice) {
     canHaveCharacters.concat(upperCaseCharactersArray)
     mustHaveCharacters.concat(upperCaseCharactersArray[getRandomFromLength(upperCaseCharactersArray)])
   }
 
-  if (userOptions.lowerCaseCharactersArray) {
+  if (userOptions.lowerCaseUserChoice) {
     canHaveCharacters.concat(lowerCaseCharactersArray)
     mustHaveCharacters.concat(lowerCaseCharactersArray[getRandomFromLength(lowerCaseCharactersArray)])
   }
 
-  if (userOptions.numericCharactersArray) {
+  if (userOptions.numericCharactersUserChoice) {
     canHaveCharacters.concat(numericCharactersArray)
     mustHaveCharacters.concat(numericCharactersArray[getRandomFromLength(numericCharactersArray)])
   }
   
-  if (userOptions.specialCharactersArray) {
+  if (userOptions.specialCharacterUserChoice) {
     canHaveCharacters.concat(specialCharactersArray)
     mustHaveCharacters.concat(specialCharactersArray[getRandomFromLength(specialCharactersArray)])
   }
 
- if (!lowerCaseCharactersArray === false,
+  if (!lowerCaseCharactersArray === false,
    !upperCaseCharactersArray === false,
-  !numericCharactersArray === false,
-  !specialCharactersArray === false) 
-  {alert('please select one special char group lower/upper/special/numeric')}
+   !numericCharactersArray === false,
+   !specialCharactersArray === false) {
+     alert('please select one special char group lower/upper/special/numeric')
+   }
    
   for (let currIndx = 0; currIndx < userOptions.length; currIndx++); {
     passwordArray.push(canHaveCharacters[getRandomFromLength(upperCaseCharactersArray)]);
    }
-  
-   for (let i = 0; i < mustHaveCharacters.length; i++) {
+   
+  for (let i = 0; i < mustHaveCharacters.length; i++) {
      password[i] = mustHaveCharacters[i];
-   }
-
-   var passwordResult = userOptions
-     
-    
-return passwordResult
+  } 
+  
 }
+
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+return password;
+
+}
+
+generateBtn.addEventListener("click", writePassword);
+
+
+  
